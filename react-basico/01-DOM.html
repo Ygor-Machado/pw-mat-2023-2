@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #root {
+            border: 1px solid red;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script>
+        // Criando um novo elemento <p> via JS
+        const parag = document.createElement('p')
+        parag.textContent = 'Palmeiras não tem mundial'
+
+        // Capturando a div root
+        const root = document.getElementById('root')
+
+        // Inserindo o novo parágrafo criado dentro da div root
+        root.appendChild(parag)
+        
+        // Criando uma nova div
+        const newDiv = document.createElement('div')
+
+        // Ajustando o contéudo e a aparência da nova div
+        newDiv.textContent = 'Div criada com JavaScript'
+        newDiv.style.border = '3px dotted green'
+        newDiv.style.backgroundColor = 'Limegreen'
+        newDiv.style.padding = '10px'
+        newDiv.style.marginTop = '50px'
+        newDiv.style.textAlign = 'center'
+        newDiv.id = 'div-green'
+
+        //root.appendChild(newDiv)
+
+        document.body.appendChild(newDiv)
+    </script>
+</body>
+</html>
