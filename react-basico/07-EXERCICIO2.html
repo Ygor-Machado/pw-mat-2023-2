@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .parag-1 {
+        text-align: center;
+        color: red;
+        text-align: center;
+        border-radius: 10px;
+            font-family: Cambria, "Times New Roman", serif;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 1800%;
+
+
+            -webkit-animation: rainbow 10s ease infinite;
+            -z-animation: rainbow 10s ease infinite;
+            -o-animation: rainbow 10s ease infinite;
+            animation: rainbow 10s ease infinite;}
+
+            @-webkit-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @-moz-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @-o-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @keyframes rainbow { 
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+      
+      .parag-2 {
+        text-align: center;
+        color: blue;
+        border-radius: 10px;
+            font-family: Cambria, "Times New Roman", serif;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 1800%;
+
+
+            -webkit-animation: rainbow 10s ease infinite;
+            -z-animation: rainbow 10s ease infinite;
+            -o-animation: rainbow 10s ease infinite;
+            animation: rainbow 10s ease infinite;}
+
+            @-webkit-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @-moz-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @-o-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @keyframes rainbow { 
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+
+        .div1 {
+          text-align: center;
+          font-family: Cambria, "Times New Roman", serif;
+          border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 1800%;
+
+
+            -webkit-animation: rainbow 10s ease infinite;
+            -z-animation: rainbow 10s ease infinite;
+            -o-animation: rainbow 10s ease infinite;
+            animation: rainbow 10s ease infinite;}
+
+            @-webkit-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @-moz-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @-o-keyframes rainbow {
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            }
+            @keyframes rainbow { 
+                0%{background-position:0% 82%}
+                50%{background-position:100% 19%}
+                100%{background-position:0% 82%}
+            } 
+  </style>
+</head>
+<body>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <div id="root"></div>
+
+  <script type="text/babel">
+        function ComponentePersonalizado({nome, sobrenome, dia, mes, ano}) 
+        {
+                  const idade = 2023 - ano;
+
+                  return <> 
+                            <p className="parag-1">{nome} {sobrenome}</p>
+                            <p className="parag-2">{dia}/{mes}/{ano}</p>
+                            <div className="div1">
+                                Idade ao final do ano: {idade} anos
+                            </div>
+                         </>
+                        
+        }
+
+        const container = 
+        <>
+            <ComponentePersonalizado nome="Ygor" sobrenome="Machado" dia="06" mes={11} ano={2003} />
+        </>
+
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(container)
+
+  </script>
+  
+</body>
+</html>
