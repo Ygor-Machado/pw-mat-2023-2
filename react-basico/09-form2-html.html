@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="09-form-html.css">
+</head>
+<body>
+    <form class ="main">
+        <div class="form-text">
+            <h1><a>Digite seu nome</a><br> maiusculo.</h1>
+            <img src="imagem.svg" alt="">
+        </div>
+        <div class="maiusc">
+            <div class="caixa">
+                <h1>Formulario</h1>
+                <div class="texto">
+                    <label><span>Nome:</span></label>
+                    <input id="campo-nome" type="text" name="nome" placeholder="Nome">
+                </div>
+
+                <div class="texto">
+                    <label>Sorebnome:</label>
+                    <input id="campo-sobrenome" type="text" name="nome" placeholder="sobrenome">
+                </div>
+
+                <label>
+                    <input type="checkbox" id="maiusc">
+                    &nbsp;
+                    <span style = "color: white">Colocar o nome completo em MAIÚSCULO</span>
+                </label>
+                <div id="resultado" style="padding: 10px; margin-top:10px; border-radius: 10px; border: 1px solid white"></div>
+                <input class="btn" type="submit" value="Enviar">
+            </div>
+        </div>
+    </form>
+
+    <script>
+        let nome, sobrenome, maiusc
+    
+        function handleChange(event) {
+          maiusc = document.getElementById('maiusc').checked
+    
+          if(maiusc) {
+            nome = document.getElementById('campo-nome').value.toUpperCase()
+            sobrenome = document.getElementById('campo-sobrenome').value.toUpperCase()
+          }
+          else {
+            nome = document.getElementById('campo-nome').value
+            sobrenome = document.getElementById('campo-sobrenome').value
+          }
+    
+          document.getElementById('resultado').textContent = nome + ' ' + sobrenome
+        }
+        
+        function handleSubmit(event)
+        {
+            event.preventDefault() // Evita o recarregamento da página
+            alert(`Olá, ${nome} ${sobrenome}!`)
+        }
+
+        // Quando uma tecla for solta nos inputs campo-nome e sobrenome,
+        // Chama a função handleChange
+        document.getElementById('campo-nome').addEventListener('keyup', handleChange)
+        document.getElementById('campo-sobrenome').addEventListener('keyup', handleChange)
+
+        // Quando o input maiusc for clicado, também chama a função handleChange
+        document.getElementById('maiusc').addEventListener('click', handleChange)
+
+       
+        // Quando o formulário for enviado (por meio do clique no botão Enviar),
+        // chama a função handleSubmit
+        document.forms[0].addEventListener('submit', handleSubmit)
+    
+      </script>
+</body>
+</html>

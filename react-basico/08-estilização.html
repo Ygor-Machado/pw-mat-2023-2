@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="08.css">
+</head>
+<body>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <div id="root"></div>
+  
+    <script type="text/babel">
+        // O estilo acima, representado como um objeto em JSX
+        const estilo1 = {
+            backgroundColor: 'orage',
+            fontSize: '30px',
+            fontFamily: '"Courier New", monospace',
+            border: '4px dotted blue'
+        }
+        /*
+            Abaixo, um componente de caixa altamente personalizado.
+            Recebe tanto props personalizadas (style e size) quanto 
+            props genéricas (...props) size caso o valor desta não seja
+            especificado.
+        */
+       function BoxItalic({style, size = 'small', ...props})
+       {
+          return <div 
+            className={`box box--${size}`}
+            style={ { fontStyle: 'italic', ...style}}
+            {...props}
+          />
+       }
+
+       const container = 
+        <>
+            {/* Usando o componente BoxItalic. No primeiro caso, não
+                será especificado o valor do prop size. Dessa forma,
+                o componente será criado com size = 'small'.
+
+                A prop style SEMPRE usará PAR DUPLO de chaves {{}}
+            */}
+            <BoxItalic
+                id="boxitalic1"
+                style={{
+                    backgroundColor: 'beige',
+                    color: 'violet'
+                }}
+                >
+                Primeira caixa em itálico
+            </BoxItalic>
+
+            <BoxItalic
+                id="boxitalic2"
+                children="Segunda caixa em italico"
+                title="Itálico desligado"
+                size="large"
+                style={{
+                    borderColor: 'orange',
+                    color: 'white',
+                    backgroundColor: 'chocolate',
+                    fontStyle: 'normal'
+                }}
+            />
+        </>
+
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(container)
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body *{
+    box-sizing: border-box ;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #201b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main a {
+    color: black;
+}
+
+.form-text{
+    width: 50vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-text h1 {
+    color: #00FFFF;
+}
+
+.maiusc {
+    width: 50vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.caixa {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.caixa h1 {
+    color:#00FFFF;
+    font-weight: 800px;
+    margin:0;
+}
+
+.texto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.texto input{
+    width: 100%;
+    border:none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.texto label {
+    color:#f0ffffde;
+    margin-bottom: 10px;
+}
+
+.texto input::placeholder {
+    color: #f0ffff94;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #2b134b;
+    background: #00FFFF;
+    box-shadow: 0px 10px 40px;
+    
+}
+
+@media (max-width: 600px){
+    .main{
+        flex-direction: column;
+    }
+    .login1 h1 {
+        display: none;
+    }
+
+    .login2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .main img {
+        width: 350px;
+    }
+ 
+} 
